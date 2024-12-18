@@ -16,7 +16,7 @@ import java.util.List;
  * Elle peut également calculer la distance entre un mot de passe et un ensemble de centres de clusters.
  *
  * @author BEN TALB Abdelaziz
- * @version 12/12/2024
+ * @version 10.0.2
  */
 public class AwesomePasswordChecker {
 

@@ -48,36 +48,54 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.0.0-M8</version>
+        <configuration>
+          <!-- Explicitement dire à surefire de charger les tests via JUnit -->
+          <includes>
+            <include>**/*Test.java</include>
+          </includes>
+        </configuration>
       </plugin>
 
-         <plugin>
-      <groupId>org.jacoco</groupId>
-      <artifactId>jacoco-maven-plugin</artifactId>
-      <version>0.8.8</version>
-      <executions>
-        <!-- Préparation de l'agent JaCoCo pendant la phase test -->
-        <execution>
-          <id>prepare-agent</id>
-          <goals>
-            <goal>prepare-agent</goal>
-          </goals>
-          <phase>test</phase>
-          <configuration>
-            <destFile>${project.build.directory}/jacoco.exec</destFile>
-            <append>true</append>
-          </configuration>
-        </execution>
+      <!-- Site plugin for generating site reports -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.12.0</version>
+      </plugin>
 
-        <!-- Génération du rapport JaCoCo pendant la phase verify -->
-        <execution>
-          <id>generate-report</id>
-          <goals>
-            <goal>report</goal>
-          </goals>
-          <phase>verify</phase> <!-- Phase pour générer le rapport -->
-        </execution>
-      </executions>
-    </plugin>
+      <!-- JaCoCo plugin configuration for coverage reports -->
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>0.8.8</version>
+        <executions>
+          <!-- Préparation de l'agent JaCoCo pendant la phase test -->
+          <execution>
+            <id>prepare-agent</id>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+            <phase>test</phase>
+            <configuration>
+              <destFile>${project.build.directory}/jacoco.exec</destFile>
+              <append>true</append>
+            </configuration>
+          </execution>
+
+          <!-- Génération du rapport JaCoCo pendant la phase verify -->
+          <execution>
+            <id>generate-report</id>
+            <goals>
+              <goal>report</goal>
+            </goals>
+            <phase>verify</phase> <!-- La phase pour générer le rapport -->
+            <configuration>
+              <!-- Le répertoire pour placer les rapports -->
+              <outputDirectory>${project.build.directory}/jacoco-report</outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
 
     </plugins>
   </build>
