@@ -10,16 +10,17 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-24.04  # Mise à jour vers Ubuntu 24.04
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up JDK 8
+      - name: Set up JDK 8 with Temurin
         uses: actions/setup-java@v2
         with:
           java-version: '8'
+          distribution: 'temurin' 
 
       - name: Build with Maven
         run: mvn clean install
@@ -28,7 +29,7 @@ jobs:
         run: mvn clean test
 
       - name: Upload JaCoCo report
-        uses: actions/upload-artifact@v3  # Mise à jour vers la version 3
+        uses: actions/upload-artifact@v3
         with:
           name: jacoco-report
           path: target/jacoco-report/
