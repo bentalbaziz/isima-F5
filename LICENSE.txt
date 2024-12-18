@@ -1,0 +1,11 @@
+Licence de Logiciel Personnel
+
+Copyright (c) 2024 BEN TALB Abdelaziz
+
+Par la présente, il est accordé, gratuitement, à toute personne obtenant une copie de ce logiciel et de sa documentation associée (le "Logiciel"), de l'utiliser, de le copier, de le modifier, de le fusionner, de le publier, de le distribuer, de sous-licencier et/ou de vendre des copies du Logiciel, et de permettre aux personnes auxquelles le Logiciel est fourni de le faire, sous réserve des conditions suivantes :
+
+    Inclusion de la licence : La mention du copyright ci-dessus et cette notice de permission doivent être incluses dans toutes les copies ou portions substantielles du Logiciel.
+
+    Absence de garantie : Le Logiciel est fourni en l'état, sans garantie d'aucune sorte, expresse ou implicite, y compris mais sans se limiter aux garanties de qualité marchande, d'adéquation à un usage particulier et de non-contrefaçon.
+
+    Exclusion de responsabilité : En aucun cas l'auteur ou les titulaires du droit d'auteur ne pourront être tenus responsables des réclamations, dommages ou autres responsabilités, que ce soit en vertu d'un contrat, d'un délit ou autrement, découlant de, ou en relation avec le Logiciel ou l'utilisation ou d'autres transactions dans le Logiciel.
