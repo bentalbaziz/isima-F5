@@ -153,14 +153,7 @@ public class AwesomePasswordChecker {
         return maskArray;
     }
 
-    /**
-     * Calcule la distance euclidienne minimale entre le mot de passe donné et un ensemble de centres de clusters.
-     * Cette méthode génère un masque pour le mot de passe, puis calcule la distance euclidienne entre ce masque
-     * et chaque centre de cluster. Elle retourne la plus petite distance trouvée.
-     *
-     * @param password Le mot de passe pour lequel la distance est calculée.
-     * @return La distance euclidienne minimale entre le masque généré et les centres de clusters.
-     */
+    
     public double getDIstance(String password) {
         int[] maskArray = maskAff(password);
         double minDistance = Double.MAX_VALUE;
@@ -171,15 +164,15 @@ public class AwesomePasswordChecker {
     }
  
  
-    /**
-     * Calculates the Euclidean distance between two arrays.
-     * This method takes two arrays, one of integers and one of doubles, 
-     * and calculates the difference between corresponding elements in each array.
-     *
-     * @param a An integer array representing the first data set.
-     * @param b A double array representing the second data set.
-     * @return The Euclidean distance between the two arrays.
-     */
+        /**
+      * Calcule la distance Euclidienne entre deux tableaux.
+      * Cette méthode prend deux tableaux, l'un d'entiers et l'autre de doubles, 
+      * et calcule la différence entre les éléments correspondants dans chaque tableau.
+      *
+      * @param a Un tableau d'entiers représentant le premier ensemble de données.
+      * @param b Un tableau de doubles représentant le deuxième ensemble de données.
+      * @return La distance Euclidienne entre les deux tableaux.
+      */
     
     private double euclideanDistance(final int[] a, final double[] b) {
       double sum = 0;
@@ -189,18 +182,18 @@ public class AwesomePasswordChecker {
       return Math.sqrt(sum);
     } 
 
-    /**
-     * Computes the MD5 hash of the given input string.
-     * This method implements the MD5 algorithm step-by-step, padding the input message, 
-     * processing it in blocks, and applying the MD5 transformation rounds to generate the hash.
-     * 
-     * The resulting MD5 hash is returned as a 32-character hexadecimal string.
-     *
-     * @param input The input string for which the MD5 hash is computed.
-     * @return The 32-character hexadecimal string representing the MD5 hash of the input.
-     * 
-     * @throws IllegalArgumentException If the input is null.
-     */
+      /**
+       * Calcule le hachage MD5 de la chaîne d'entrée donnée.
+       * Cette méthode implémente l'algorithme MD5 étape par étape, en ajoutant des bits de remplissage à 
+       * l'entrée, en la traitant par blocs et en appliquant les cycles de transformation MD5 pour générer le hachage.
+       * 
+       * Le hachage MD5 résultant est retourné sous forme de chaîne hexadécimale de 32 caractères.
+       *
+       * @param input La chaîne d'entrée pour laquelle le hachage MD5 est calculé.
+       * @return La chaîne hexadécimale de 32 caractères représentant le hachage MD5 de l'entrée.
+       * 
+       * @throws IllegalArgumentException Si l'entrée est null.
+       */
      public static String ComputeMD5(String input) {
        if (input == null) {
          throw new IllegalArgumentException("Input string cannot be null");
