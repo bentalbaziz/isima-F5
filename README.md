@@ -1,25 +1,49 @@
-AwesomePasswordChecker
-Description du projet
+# AwesomePasswordChecker
 
-AwesomePasswordChecker est une bibliothèque Java permettant de :
+## Description
+**AwesomePasswordChecker** est une bibliothèque Java conçue pour évaluer la robustesse des mots de passe en analysant leurs caractéristiques. Il calcule la distance entre un mot de passe et un ensemble de centres de clusters pour déterminer sa solidité. Il inclut également une méthode de hachage MD5 pour des besoins de vérification des données.
 
-    Évaluer la robustesse des mots de passe en fonction d'un ensemble de centres de clusters.
-    Calculer la distance euclidienne minimale entre un mot de passe et des clusters prédéfinis pour analyser sa force.
-    Générer des masques caractéristiques pour les mots de passe.
-    Calculer le hash MD5 d'une chaîne donnée.
+---
 
-Ce projet utilise des concepts avancés comme l'analyse de distances euclidiennes, le traitement de fichiers CSV et l'implémentation de l'algorithme MD5.
-Fonctionnalités principales
+## Table des matières
+1. [Fonctionnalités](#fonctionnalités)
+2. [Prérequis](#prérequis)
+3. [Installation](#installation)
+4. [Utilisation](#utilisation)
+5. [Exemple de code](#exemple-de-code)
+6. [Structure du projet](#structure-du-projet)
+7. [Auteur](#auteur)
+8. [Licence](#licence)
 
-    Analyse de mots de passe : Évalue la robustesse d'un mot de passe en se basant sur des centres de clusters.
-    Génération de masques : Transforme un mot de passe en un tableau d'entiers représentant ses caractéristiques.
-    Calcul de distances : Mesure la distance entre un mot de passe et des données de référence.
-    Génération de hash MD5 : Calcule le hachage MD5 d'une chaîne de caractères.
+---
 
-Prérequis
+## Fonctionnalités
 
-Pour utiliser AwesomePasswordChecker, vous devez avoir :
+- **Évaluation de la robustesse des mots de passe** :
+  - Génération de masques spécifiques aux mots de passe.
+  - Calcul de la distance euclidienne minimale entre un mot de passe et un ensemble de centres de clusters.
 
-    Java (JDK 8 ou supérieur)
-    Apache Maven (pour compiler et exécuter le projet)
-    Un fichier CSV de centres de clusters (cluster_centers_HAC_aff.csv) placé dans les ressources.
+- **Hachage MD5** :
+  - Implémentation personnalisée pour générer des empreintes MD5 de chaînes.
+  
+
+- **Lecture de fichiers CSV** :
+  - Chargement des centres de clusters à partir d'un fichier CSV.
+
+---
+
+## Prérequis
+
+Avant d'utiliser cette bibliothèque, assurez-vous d'avoir les éléments suivants installés sur votre machine :
+- **Java Development Kit (JDK)** version **8+**
+- Un **IDE** (IntelliJ, Eclipse, Visual Studio Code, etc.)
+- Une bibliothèque **CSV** si besoin (optionnel, déjà géré en natif ici).
+
+---
+
+## Installation
+
+1. Clonez le projet à partir de votre dépôt Git :
+   ```bash
+   git clone https://github.com/votre-nom/AwesomePasswordChecker.git
+   cd AwesomePasswordChecker
