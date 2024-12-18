@@ -10,10 +10,7 @@
 2. [Prérequis](#prérequis)
 3. [Installation](#installation)
 4. [Utilisation](#utilisation)
-5. [Exemple de code](#exemple-de-code)
-6. [Structure du projet](#structure-du-projet)
-7. [Auteur](#auteur)
-8. [Licence](#licence)
+5. [Licence](/LICENSE.txt)
 
 ---
 
@@ -25,7 +22,7 @@
 
 - **Hachage MD5** :
   - Implémentation personnalisée pour générer des empreintes MD5 de chaînes.
-  
+
 
 - **Lecture de fichiers CSV** :
   - Chargement des centres de clusters à partir d'un fichier CSV.
@@ -45,5 +42,5 @@ Avant d'utiliser cette bibliothèque, assurez-vous d'avoir les éléments suivan
 
 1. Clonez le projet à partir de votre dépôt Git :
    ```bash
-   git clone https://github.com/votre-nom/AwesomePasswordChecker.git
+   git clone https://github.com/bentalbaziz/isima-F5.git
    cd AwesomePasswordChecker
