@@ -12,8 +12,10 @@ import java.util.List;
 
 /**
  * Cette classe gère le calcul de la robustesse des mots de passe.
- * Elle analyse les caractéristiques d'un mot de passe et retourne un score de robustesse.
- * Elle peut également calculer la distance entre un mot de passe et un ensemble de centres de clusters.
+ * Elle analyse les caractéristiques d'un mot de passe et retourne un 
+ * score de robustesse.
+ * Elle peut également calculer la distance entre un mot de passe et 
+ * un ensemble de centres de clusters.
  *
  * @author BEN TALB Abdelaziz
  * @version 10.0.2
@@ -24,8 +26,10 @@ public class AwesomePasswordChecker {
     private final List<double[]> clusterCenters = new ArrayList<>();
 
     /**
-     * Retourne l'instance singleton de AwesomePasswordChecker en l'initialisant avec le fichier fourni.
-     * Si l'instance n'existe pas, elle est créée en utilisant les données contenues dans le fichier fourni.
+     * Retourne l'instance singleton de AwesomePasswordChecker en l'initialisant
+     *  avec le fichier fourni.
+     * Si l'instance n'existe pas, elle est créée en utilisant les données contenues
+     *  dans le fichier fourni.
      *
      * @param file Le fichier contenant les données nécessaires pour initialiser l'instance.
      * @return L'instance singleton de AwesomePasswordChecker.
@@ -42,8 +46,10 @@ public class AwesomePasswordChecker {
     }
 
     /**
-     * Retourne l'instance singleton de AwesomePasswordChecker en l'initialisant avec un fichier de ressources.
-     * Si l'instance n'existe pas, elle est créée en chargeant les données à partir du fichier "cluster_centers_HAC_aff.csv".
+     * Retourne l'instance singleton de AwesomePasswordChecker en l'initialisant avec
+     *  un fichier de ressources.
+     * Si l'instance n'existe pas, elle est créée en chargeant les données à partir 
+     * du fichier "cluster_centers_HAC_aff.csv".
      *
      * @return L'instance singleton de AwesomePasswordChecker.
      * @throws IOException Si une erreur survient lors de la lecture du fichier de ressources.
@@ -62,11 +68,14 @@ public class AwesomePasswordChecker {
     }
 
     /**
-     * Construit une instance de AwesomePasswordChecker en chargeant les centres de clusters à partir du flux d'entrée fourni.
-     * Ce constructeur lit chaque ligne du flux, sépare les données par des virgules et stocke les valeurs analysées
+     * Construit une instance de AwesomePasswordChecker en chargeant les centres
+     *  de clusters à partir du flux d'entrée fourni.
+     * Ce constructeur lit chaque ligne du flux, sépare les données par des virgules
+     *  et stocke les valeurs analysées
      * comme centres de clusters utilisés pour les calculs de robustesse des mots de passe.
      *
-     * @param is Le flux d'entrée contenant les données des centres de clusters (typiquement un fichier CSV).
+     * @param is Le flux d'entrée contenant les données des centres de clusters 
+     * (typiquement un fichier CSV).
      * @throws IOException Si une erreur survient lors de la lecture du flux d'entrée.
      */
     private AwesomePasswordChecker(InputStream is) throws IOException {
@@ -85,11 +94,14 @@ public class AwesomePasswordChecker {
     }
 
     /**
-     * Génère un tableau de masque basé sur les caractères du mot de passe fourni.
-     * Chaque caractère du mot de passe est associé à une valeur entière selon des règles prédéfinies :
+     * Génère un tableau de masque basé sur les caractères du mot 
+     * de passe fourni.
+     * Chaque caractère du mot de passe est associé à une valeur entière selon
+     *  des règles prédéfinies :
      * - Voyelles et certaines consonnes courantes sont associées à 1 ou 3.
      * - Caractères spéciaux sont associés à 6.
-     * - Les lettres minuscules sont associées à 2, les majuscules à 4, les chiffres à 5 et les autres caractères à 7.
+     * - Les lettres minuscules sont associées à 2, les majuscules à 4, les chiffres à 5 
+     * et les autres caractères à 7.
      * Le tableau résultant permet de représenter les caractéristiques du mot de passe.
      *
      * @param password Le mot de passe pour lequel le masque est généré.
@@ -153,7 +165,14 @@ public class AwesomePasswordChecker {
         return maskArray;
     }
 
-    
+        /**
+      * Calcule la distance euclidienne entre un mot de passe et les centres de
+      * clusters.
+      *
+      * @param password Le mot de passe à analyser.
+      * @return La distance euclidienne minimale entre le mot de passe
+      *         et les centres de clusters.
+      */
     public double getDIstance(String password) {
         int[] maskArray = maskAff(password);
         double minDistance = Double.MAX_VALUE;
@@ -184,13 +203,17 @@ public class AwesomePasswordChecker {
 
       /**
        * Calcule le hachage MD5 de la chaîne d'entrée donnée.
-       * Cette méthode implémente l'algorithme MD5 étape par étape, en ajoutant des bits de remplissage à 
-       * l'entrée, en la traitant par blocs et en appliquant les cycles de transformation MD5 pour générer le hachage.
+       * Cette méthode implémente l'algorithme MD5 étape par étape, en ajoutant
+       *  des bits de remplissage à 
+       * l'entrée, en la traitant par blocs et en appliquant les cycles de 
+       * transformation MD5 pour générer le hachage.
        * 
-       * Le hachage MD5 résultant est retourné sous forme de chaîne hexadécimale de 32 caractères.
+       * Le hachage MD5 résultant est retourné sous forme de chaîne hexadécimale de
+       *  32 caractères.
        *
        * @param input La chaîne d'entrée pour laquelle le hachage MD5 est calculé.
-       * @return La chaîne hexadécimale de 32 caractères représentant le hachage MD5 de l'entrée.
+       * @return La chaîne hexadécimale de 32 caractères représentant le hachage MD5
+       *  de l'entrée.
        * 
        * @throws IllegalArgumentException Si l'entrée est null.
        */

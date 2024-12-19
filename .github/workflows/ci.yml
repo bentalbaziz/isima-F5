@@ -1,4 +1,4 @@
-name: CI pour AwesomePasswordCheker
+name: CI/CD pour AwesomePasswordChecker
 
 on:
   push:
@@ -9,27 +9,45 @@ on:
       - master
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-24.04
 
     steps:
+      # Étape 1 : Checkout du code
       - name: Checkout code
         uses: actions/checkout@v2
 
+      # Étape 2 : Configurer JDK 8 avec Temurin
       - name: Set up JDK 8 with Temurin
         uses: actions/setup-java@v2
         with:
           java-version: '8'
-          distribution: 'temurin' 
+          distribution: 'temurin'
 
+      # Étape 3 : Compiler et installer avec Maven
       - name: Build with Maven
         run: mvn clean install
 
+      # Étape 4 : Exécuter les tests et générer le rapport JaCoCo
       - name: Run tests with Maven and generate JaCoCo report
-        run: mvn clean test
+        run: mvn test
 
-      - name: Upload JaCoCo report
-        uses: actions/upload-artifact@v3
+      # Étape 5 : Générer la Javadoc
+      - name: Generate Javadoc
+        run: mvn javadoc:javadoc
+
+      # Étape 6 : Déployer la Javadoc sur GitHub Pages
+      - name: Deploy Javadoc to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: jacoco-report
-          path: target/jacoco-report/
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: target/site/apidocs
+
+      # Étape 7 : Créer une Release et publier l'artefact
+      - name: Create Release and Upload Artifacts
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            target/*.jar
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
