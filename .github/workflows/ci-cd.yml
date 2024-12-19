@@ -3,7 +3,7 @@ name: CI/CD pour AwesomePasswordChecker
 on:
   push:
     tags:
-      - 'v*.*'  # Déclenche le workflow sur des tags comme v1.0, v1.1, etc.
+      - 'v1.0'  
   pull_request:
     branches:
       - master
