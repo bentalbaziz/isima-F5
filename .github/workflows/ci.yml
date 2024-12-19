@@ -43,7 +43,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: target/site/apidocs
 
-      # Étape 7 : Créer une Release et publier l'artefact
+      # Étape 7 : Créer une Release et publier l'artefact xD
       - name: Create Release and Upload Artifacts
         uses: softprops/action-gh-release@v1
         with:
