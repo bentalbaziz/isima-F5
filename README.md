@@ -44,4 +44,4 @@ Avant d'utiliser cette bibliothèque, assurez-vous d'avoir les éléments suivan
    ```bash
    git clone https://github.com/bentalbaziz/isima-F5.git
    cd AwesomePasswordChecker
-#xD
+
