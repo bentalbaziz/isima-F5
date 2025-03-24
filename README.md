@@ -1,6 +1,6 @@
 # AwesomePasswordChecker
 
-## Description
+## Description 😊
 **AwesomePasswordChecker** est une bibliothèque Java conçue pour évaluer la robustesse des mots de passe en analysant leurs caractéristiques. Il calcule la distance entre un mot de passe et un ensemble de centres de clusters pour déterminer sa solidité. Il inclut également une méthode de hachage MD5 pour des besoins de vérification des données.
 
 ---
